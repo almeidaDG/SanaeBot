@@ -5,4 +5,3 @@ node_modules/
 # Files
 config.json
 .eslintrc.json
-Procfile

@@ -1,6 +1,6 @@
-const { Client }	= require('discord.js-commando');
-const path 			= require ('path');
-const config 		= require ('./config.json');
+﻿const { Client } = require('discord.js-commando');
+const path = require ('path');
+const config = require ('./config.json');
 
 const sanae = new Client({
 	owner: config.owner,
@@ -16,6 +16,7 @@ sanae.registry
 	.registerDefaultGroups()
 	.registerDefaultCommands({
 		help: false,
+		eval: false,
 		prefix: false,
 		ping: false,
 		commandState: false,

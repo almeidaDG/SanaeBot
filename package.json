@@ -2,18 +2,20 @@
   "name": "SanaeBot",
   "version": "1.0.5",
   "description": "first project using nodejs to make a discord bot",
-  "main": "index.js",
+  "main": "SanaeBot.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node sanae.js"
   },
   "author": "Maemi",
-  "license": "MIT",
+  "license": "GPL",
   "dependencies": {
     "common-tags": "^1.8.0",
     "discord.js": "^11.4.2",
     "discord.js-commando": "^0.10.0",
     "fs": "0.0.1-security",
+    "moment": "^2.24.0",
+    "moment-duration-format": "^2.2.2",
     "node-superfetch": "^0.1.9",
     "path": "^0.12.7",
     "util": "^0.11.1"
