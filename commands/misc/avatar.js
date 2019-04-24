@@ -1,4 +1,4 @@
-const { Command } = require('discord.js-commando');
+const Command = require('../../structures/Command');
 const { RichEmbed } = require('discord.js');
 
 module.exports = class AvatarCommand extends Command {

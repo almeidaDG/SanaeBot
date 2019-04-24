@@ -35,4 +35,8 @@ sanae.on('ready', () => {
 	}, 60000);
 });
 
+sanae.on('error', err => sanae.logger.error(err));
+
+sanae.on('commandError', (command, err) => sanae.logger.error(`[COMMAND:${command.name}]\n${err.stack}`));
+
 sanae.login(config.token);

@@ -1,9 +1,10 @@
-const { Command } = require('discord.js-commando');
+const Command = require('../../structures/Command');
 const { RichEmbed } = require('discord.js');
 const moment = require('moment');
 require('moment-duration-format');
 const { version, dependencies } = require('../../package.json');
-const { SANAE_GITHUB_REPO } = require ('../../config.json');
+const { SANAE_GITHUB_REPO_USERNAME, SANAE_GITHUB_REPO_NAME } = require ('../../config.json');
+const source = SANAE_GITHUB_REPO_NAME && SANAE_GITHUB_REPO_USERNAME;
 
 module.exports = class SanaeCommand extends Command {
 	constructor(client) {
@@ -20,7 +21,8 @@ module.exports = class SanaeCommand extends Command {
 		const embed = new RichEmbed()
 			.setColor('#5359af')
 			.setThumbnail(this.client.user.displayAvatarURL)
-			.addField('🤖 Código Fonte', `[GitHub](${SANAE_GITHUB_REPO})`, true)
+			.addField('🤖 Código Fonte',
+				source ? `[GitHub](https://github.com/${SANAE_GITHUB_REPO_USERNAME}/${SANAE_GITHUB_REPO_NAME})` : 'N/A', true)
 			.addField('💾 Uso da Memória', `${Math.round(process.memoryUsage().heapUsed / 1024 / 1024)}MB`, true)
 			.addField('🕒 Tempo Ativo', moment.duration(this.client.uptime).format('hh:mm:ss', { trim: false }), true)
 			.addField('📦 Versão', `v${version}`, true)
