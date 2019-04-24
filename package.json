@@ -1,8 +1,8 @@
 {
   "name": "SanaeBot",
-  "version": "1.0.5",
+  "version": "1.0.7",
   "description": "first project using nodejs to make a discord bot",
-  "main": "SanaeBot.js",
+  "main": "sanae.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node sanae.js"

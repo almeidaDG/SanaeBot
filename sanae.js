@@ -1,6 +1,7 @@
 ﻿const { Client } = require('discord.js-commando');
 const path = require ('path');
 const config = require ('./config.json');
+const activities = require('./assets/json/activity');
 
 const sanae = new Client({
 	owner: config.owner,
@@ -13,7 +14,9 @@ sanae.registry
 		['misc', 'Diversos'],
 		['util', 'Utilidades'],
 	])
-	.registerDefaultGroups()
+	.registerDefaultGroups({
+		commands: false,
+	})
 	.registerDefaultCommands({
 		help: false,
 		eval: false,
@@ -26,7 +29,10 @@ sanae.registry
 
 sanae.on('ready', () => {
 	console.log(`${sanae.user.tag} está online!`);
-	sanae.user.setActivity(config.currentGame);
+	sanae.setInterval(() => {
+		const activity = activities[Math.floor(Math.random() * activities.length)];
+		sanae.user.setActivity(activity.text, { type: activity.type });
+	}, 60000);
 });
 
 sanae.login(config.token);

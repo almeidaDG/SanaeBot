@@ -71,8 +71,8 @@ module.exports = class HelpCommand extends Command {
 				messages.push(await msg.direct(stripIndents`
 					${oneLine`
 						Para executar um comando em ${msg.guild ? msg.guild.name : 'qualquer servidor'},
-						use ${Command.usage('s! comando', null, null)}.
-						Por exemplo, ${Command.usage('avatar', msg.guild ? msg.guild.commandPrefix : null)}.
+						use ${Command.usage('s!comando', null, null)}.
+						Por exemplo, ${Command.usage('s!sanae', msg.guild ? msg.guild.commandPrefix : null)}.
 					`}
 					Para executar um comando neste DM, use ${Command.usage('comando', null, null)} sem nenhum prefixo.
 
@@ -84,10 +84,11 @@ module.exports = class HelpCommand extends Command {
 		.map(grp => stripIndents`
 							__${grp.name}__
 							${(showAll ? grp.commands : grp.commands.filter(cmd => cmd.isUsable(msg)))
-		.map(cmd => `**${cmd.name}:** ${cmd.description}${cmd.nsfw ? ' (NSFW)' : ''}`).join('\n')
+		.map(cmd => `**\`s!${cmd.name}\` :** ${cmd.description}${cmd.nsfw ? ' (NSFW)' : ''}`).join('\n')
 }
 						`).join('\n\n')
 }
+
 				`, { split: true }));
 				if(msg.channel.type !== 'dm') messages.push(await msg.reply('📬 Enviado uma mensagem para o seu DM.'));
 			}
