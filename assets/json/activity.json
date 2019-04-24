@@ -1,6 +1,6 @@
 [
 	{
-		"text": "suas ordens, mestre!",
+		"text": "suas ordens, mestre",
 		"type": "Listening"
     },
     {
@@ -12,15 +12,11 @@
 		"type": "Playing"
     },
     {
-		"text": "com meu mestre!",
+		"text": "com meu mestre",
 		"type": "Playing"
     },
     {
 		"text": "Google Chrome",
 		"type": "Playing"
-    },
-    {
-		"text": "sozinha =(",
-		"type": "Playing"
-	}
+    }
 ]

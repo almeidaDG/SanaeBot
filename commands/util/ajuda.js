@@ -1,5 +1,6 @@
 const { stripIndents, oneLine } = require('common-tags');
 const Command = require('../../structures/Command');
+const config = require ('../../config.json');
 
 module.exports = class HelpCommand extends Command {
 	constructor(client) {
@@ -35,7 +36,7 @@ module.exports = class HelpCommand extends Command {
 						${commands[0].nsfw ? ' (NSFW)' : ''}
 					`}
 
-					**Forma de usar:** ${msg.anyUsage(`${commands[0].name}${commands[0].format ? ` ${commands[0].format}` : ''}`)}
+					**Forma de usar:** \`${config.prefix}${commands[0].name}\`${commands[0].format ? ` ${commands[0].format}` : ''}
 				`;
 				if(commands[0].aliases.length > 0) help += `\n**Aliases:** ${commands[0].aliases.join(', ')}`;
 				help += `\n${oneLine`
@@ -47,10 +48,10 @@ module.exports = class HelpCommand extends Command {
 				const messages = [];
 				try {
 					messages.push(await msg.direct(help));
-					if(msg.channel.type !== 'dm') messages.push(await msg.reply('📬 Enviado uma mensagem para o seu DM.'));
+					if(msg.channel.type !== 'dm') messages.push(await msg.reply('📬 Vamos ter uma conversinha no privado, hehe.'));
 				}
 				catch(err) {
-					messages.push(await msg.reply('Não foi possível te enviar um DM. Você está com DMs desativados?'));
+					messages.push(await msg.reply('Não foi possível te enviar uma mensagem. Você está com suas mensagens diretas desativada :('));
 				}
 				return messages;
 			}
@@ -71,8 +72,8 @@ module.exports = class HelpCommand extends Command {
 				messages.push(await msg.direct(stripIndents`
 					${oneLine`
 						Para executar um comando em ${msg.guild ? msg.guild.name : 'qualquer servidor'},
-						use ${Command.usage('s!comando', null, null)}.
-						Por exemplo, ${Command.usage('s!sanae', msg.guild ? msg.guild.commandPrefix : null)}.
+						use ${Command.usage(`${config.prefix}comando`, null, null)}.
+						Por exemplo, ${Command.usage(`${config.prefix}sanae`, msg.guild ? msg.guild.commandPrefix : null)}.
 					`}
 					Para executar um comando neste DM, use ${Command.usage('comando', null, null)} sem nenhum prefixo.
 
@@ -84,16 +85,16 @@ module.exports = class HelpCommand extends Command {
 		.map(grp => stripIndents`
 							__${grp.name}__
 							${(showAll ? grp.commands : grp.commands.filter(cmd => cmd.isUsable(msg)))
-		.map(cmd => `**\`s!${cmd.name}\` :** ${cmd.description}${cmd.nsfw ? ' (NSFW)' : ''}`).join('\n')
+		.map(cmd => `**\`${config.prefix}${cmd.name}\` :** ${cmd.description}${cmd.nsfw ? ' (NSFW)' : ''}`).join('\n')
 }
 						`).join('\n\n')
 }
 
 				`, { split: true }));
-				if(msg.channel.type !== 'dm') messages.push(await msg.reply('📬 Enviado uma mensagem para o seu DM.'));
+				if(msg.channel.type !== 'dm') messages.push(await msg.reply('📬 Vamos ter uma conversinha no privado, hehe.'));
 			}
 			catch(err) {
-				messages.push(await msg.reply('Não foi possível te enviar um DM. Você está com DMs desativados?'));
+				messages.push(await msg.reply('Não foi possível te enviar uma mensagem. Você está com suas mensagens diretas desativada :('));
 			}
 			return messages;
 		}

@@ -13,10 +13,9 @@ sanae.registry
 	.registerGroups([
 		['misc', 'Diversos'],
 		['util', 'Utilidades'],
+		['busca', 'Buscas'],
 	])
-	.registerDefaultGroups({
-		commands: false,
-	})
+	.registerDefaultGroups()
 	.registerDefaultCommands({
 		help: false,
 		eval: false,
@@ -34,9 +33,5 @@ sanae.on('ready', () => {
 		sanae.user.setActivity(activity.text, { type: activity.type });
 	}, 60000);
 });
-
-sanae.on('error', err => sanae.logger.error(err));
-
-sanae.on('commandError', (command, err) => sanae.logger.error(`[COMMAND:${command.name}]\n${err.stack}`));
 
 sanae.login(config.token);

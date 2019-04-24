@@ -28,7 +28,7 @@ module.exports = class SanaeCommand extends Command {
 			.addField('📦 Versão', `v${version}`, true)
 			.addBlankField()
 			.addField('📚 Dependências', this.parseDependencies())
-			.setFooter('©2019 - Maemi#0501', 'https://avatars1.githubusercontent.com/u/35153488?s=460&v=4');
+			.setFooter('©2019 - Maemi#0501', 'https://i.imgur.com/WZlFoOU.gif');
 		return msg.embed(embed);
 	}
 

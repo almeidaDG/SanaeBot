@@ -7,6 +7,6 @@ module.exports = class SanaeCommand extends Command {
 		this.argsSingleQuotes = info.argsSingleQuotes || false;
 		this.throttling = info.throttling || { usages: 1, duration: 2 };
 		this.credit = info.credit || [];
-		this.credit.push({ name: 'Maemi#0501', url: 'https://github.com/toosugoi4u' });
+		this.credit.push({ name: 'Maemi#0501', url: 'https://github.com/sushigang' });
 	}
 };
