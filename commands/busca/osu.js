@@ -2,6 +2,7 @@ const Command = require('../../structures/Command');
 const { RichEmbed } = require('discord.js');
 const request = require('node-superfetch');
 const { formatNumber } = require('../../util/Util');
+const moment = require('moment');
 const { OSU_KEY } = require ('../../config.json');
 
 module.exports = class OsuCommand extends Command {
@@ -49,7 +50,7 @@ module.exports = class OsuCommand extends Command {
 				.addField('Precisão', data.accuracy ? `${Math.round(data.accuracy)}%` : '???', true)
 				.addField('Play Count', data.playcount ? formatNumber(data.playcount) : '???', true)
 				.addField('País', data.country || '???', true)
-				.addField('Membro desde', data.join_date, true)
+				.addField('Membro desde', moment.utc(data.join_date).format('DD/MM/YYYY h:mm A'), true)
 				.addField('Ranked Score', data.ranked_score ? formatNumber(data.ranked_score) : '???', true)
 				.addField('Total Score', data.total_score ? formatNumber(data.total_score) : '???', true)
 				.addField('SS', data.count_rank_ss ? formatNumber(data.count_rank_ss) : '???', true)
