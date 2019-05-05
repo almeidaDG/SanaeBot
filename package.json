@@ -4,8 +4,8 @@
   "description": "first project using nodejs to make a discord bot",
   "main": "sanae.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node sanae.js"
+    "start": "node sanae.js",
+    "install": "node-pre-gyp install --fallback-to-build"
   },
   "author": "Maemi",
   "license": "GPL",

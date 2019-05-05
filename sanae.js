@@ -14,6 +14,7 @@ sanae.registry
 		['misc', 'Diversos'],
 		['util', 'Utilidades'],
 		['busca', 'Buscas'],
+		['info', 'Informações'],
 	])
 	.registerDefaultGroups()
 	.registerDefaultCommands({

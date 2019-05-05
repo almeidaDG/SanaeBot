@@ -16,4 +16,13 @@ module.exports = class Util {
 		if (mode === 'decode') return Buffer.from(text, 'base64').toString('utf8') || null;
 		throw new TypeError(`${mode} is not a supported base64 mode.`);
 	}
+
+	static trimArray(arr, maxLen = 10) {
+		if (arr.length > maxLen) {
+			const len = arr.length - maxLen;
+			arr = arr.slice(0, maxLen);
+			arr.push(`${len} mais...`);
+		}
+		return arr;
+	}
 };

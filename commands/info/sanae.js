@@ -11,7 +11,7 @@ module.exports = class SanaeCommand extends Command {
 		super(client, {
 			name:'sanae',
 			aliases: ['sanaezinha'],
-			group: 'util',
+			group: 'info',
 			memberName: 'sanae ',
 			description: 'Informações sobre mim',
 			clientPermissions: ['EMBED_LINKS'],
@@ -24,7 +24,7 @@ module.exports = class SanaeCommand extends Command {
 			.addField('🤖 Código Fonte',
 				source ? `[GitHub](https://github.com/${SANAE_GITHUB_REPO_USERNAME}/${SANAE_GITHUB_REPO_NAME})` : 'N/A', true)
 			.addField('💾 Uso da Memória', `${Math.round(process.memoryUsage().heapUsed / 1024 / 1024)}MB`, true)
-			.addField('🕒 Tempo Ativo', moment.duration(this.client.uptime).format('hh:mm:ss', { trim: false }), true)
+			.addField('🕒 Tempo Ativo', moment.duration(this.client.uptime).format('ddd:hh:mm:ss', { trim: false }), true)
 			.addField('📦 Versão', `v${version}`, true)
 			.addBlankField()
 			.addField('📚 Dependências', this.parseDependencies())
