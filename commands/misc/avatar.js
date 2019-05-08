@@ -7,7 +7,7 @@ module.exports = class AvatarCommand extends Command {
 			name:'avatar',
 			group: 'misc',
 			memberName: 'avatar',
-			description: 'Mostra o avatar de um usuário marcado ou o seu próprio',
+			description: 'Mostra o avatar de um usuário marcado ou o seu próprio.',
 			args: [
 				{
 					type:'user',

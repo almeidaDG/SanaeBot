@@ -9,7 +9,7 @@ module.exports = class DuckCommand extends Command {
 			aliases: ['pato', 'patinho'],
 			group: 'misc',
 			memberName: 'quack',
-			description: 'Envia no chat fotos de patos aleatórios',
+			description: 'Envia no chat fotos de patos aleatórios.',
 			clientPermissions: ['ATTACH_FILES'],
 			credit: [
 				{

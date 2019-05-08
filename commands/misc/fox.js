@@ -9,7 +9,7 @@ module.exports = class FoxCommand extends Command {
 			aliases: ['raposa'],
 			group: 'misc',
 			memberName: 'fox',
-			description: 'Envia no chat foto de raposas aleatórias',
+			description: 'Envia no chat foto de raposas aleatórias.',
 			clientPermissions: ['ATTACH_FILES'],
 			credit: [
 				{

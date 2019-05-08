@@ -13,7 +13,7 @@ module.exports = class SanaeCommand extends Command {
 			aliases: ['sanaezinha'],
 			group: 'info',
 			memberName: 'sanae ',
-			description: 'Informações sobre mim',
+			description: 'Informações sobre mim.',
 			clientPermissions: ['EMBED_LINKS'],
 		});
 	}

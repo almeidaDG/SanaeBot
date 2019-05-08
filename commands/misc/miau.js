@@ -9,7 +9,7 @@ module.exports = class CatCommand extends Command {
 			aliases: ['gato', 'gatinho'],
 			group: 'misc',
 			memberName: 'miau',
-			description: 'Envia no chat fotos de gatos aleatórios',
+			description: 'Envia no chat fotos de gatos aleatórios.',
 		});
 	}
 	run(message) {

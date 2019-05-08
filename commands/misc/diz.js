@@ -6,7 +6,7 @@ module.exports = class SayCommand extends Command {
 			name: 'diz',
 			group: 'misc',
 			memberName: 'diz',
-			description: 'Faz o bot dizer algo que você escreveu',
+			description: 'Faz o bot dizer algo que você escreveu.',
 			args: [
 				{
 					key: 'text',

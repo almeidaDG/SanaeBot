@@ -8,7 +8,7 @@ module.exports = class HelpCommand extends Command {
 			name: 'ajuda',
 			group: 'util',
 			memberName: 'ajuda',
-			description: 'Mostra uma lista de comandos permitidos, ou informações detalhadas de um comando específico',
+			description: 'Mostra uma lista de comandos permitidos, ou informações detalhadas de um comando específico.',
 			examples: ['ajuda', 'prefixo ajuda'],
 			guarded: true,
 

@@ -7,7 +7,7 @@ module.exports = class PingCommand extends Command {
 			name: 'ping',
 			group: 'util',
 			memberName: 'ping',
-			description: 'Checa o ping do usuário e do bot com o servidor do discord',
+			description: 'Checa o ping do usuário e do bot com o servidor do discord.',
 		});
 	}
 
